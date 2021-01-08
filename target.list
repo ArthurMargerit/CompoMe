@@ -1,0 +1,5 @@
+TYPE\.GLOBAL
+TYPE\..*
+.*BASE.*
+.*COMPILE.*
+.*INTERFACE.*
