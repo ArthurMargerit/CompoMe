@@ -192,7 +192,12 @@
       DEGRADED: 16
       DEAD: 32
       STRESSED: 64
-      UNKNOWN: 128 
+      UNKNOWN: 128
+    OPTIONS:
+      ENUM_CLS: ui32
+      ENUM_FLAGS: true
+    INCLUDE:
+      - '"Types/ui32.hpp"'
 
 - INTERFACE:
     NAME: CompoMe::Component_Control

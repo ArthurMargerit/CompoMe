@@ -7,7 +7,7 @@ namespace CompoMe {
 void Component_Core_Component_Control_handle::step() {
   auto v_state = this->get_c().get_state();
 
-  if (v_state & COMPONENT_STATE_STARTED == COMPONENT_STATE_STARTED) {
+  if (is(v_state,Component_state::STARTED)) {
     C_ERROR("Wrong state translation",
             "to do a step you need to start component first");
     return;
@@ -21,13 +21,13 @@ void Component_Core_Component_Control_handle::step() {
 void Component_Core_Component_Control_handle::start() {
   auto v_state = this->get_c().get_state();
 
-  if (v_state & COMPONENT_STATE_CONFIGURED == COMPONENT_STATE_CONFIGURED) {
+  if (is(v_state, Component_state::CONFIGURED)) {
     C_ERROR("Wrong state translation",
             "to do a start you need to configure component first");
     return;
   }
 
-  if (v_state & COMPONENT_STATE_CONNECTED == COMPONENT_STATE_CONNECTED) {
+  if (is(v_state, Component_state::CONNECTED)) {
     C_ERROR("Wrong state translation",
             "to do a start you need to connect component first");
     return;
@@ -41,7 +41,7 @@ void Component_Core_Component_Control_handle::start() {
 void Component_Core_Component_Control_handle::stop() {
   auto v_state = this->get_c().get_state();
 
-  if (v_state & COMPONENT_STATE_STARTED == COMPONENT_STATE_STARTED) {
+  if (is(v_state, Component_state::STARTED)) {
     C_ERROR("Wrong state translation",
             "to do a stop you need to start component first");
     return;
@@ -63,7 +63,7 @@ void Component_Core_Component_Control_handle::uninit() {
 
 void Component_Core_Component_Control_handle::connect() {
   auto v_state = this->get_c().get_state();
-  if (v_state & COMPONENT_STATE_INITIALIZED == COMPONENT_STATE_INITIALIZED) {
+  if (is(v_state, Component_state::INITIALIZED)) {
     C_ERROR("Wrong state translation",
             "to do a configured you need to initialized component first");
     return;
@@ -75,7 +75,7 @@ void Component_Core_Component_Control_handle::connect() {
 
 void Component_Core_Component_Control_handle::configure() {
   auto v_state = this->get_c().get_state();
-  if (v_state & COMPONENT_STATE_INITIALIZED == COMPONENT_STATE_INITIALIZED) {
+  if (is(v_state, Component_state::INITIALIZED)) {
     C_ERROR("Wrong state translation",
             "to do a configured you need to initialized component first");
     return;
