@@ -203,6 +203,7 @@
     NAME: CompoMe::Component_Control
     FUNCTION:
       - void step()
+      - void step2()
       - void start()
       - void stop()
       - void init()

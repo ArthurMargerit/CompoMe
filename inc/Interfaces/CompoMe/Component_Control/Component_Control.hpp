@@ -55,6 +55,7 @@ public:
   //! Destructor
   virtual ~Component_Control() noexcept;
   virtual void step() = 0;
+  virtual void step2() = 0;
   virtual void start() = 0;
   virtual void stop() = 0;
   virtual void init() = 0;
