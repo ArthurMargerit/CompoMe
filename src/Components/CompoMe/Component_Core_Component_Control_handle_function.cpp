@@ -1,11 +1,14 @@
 #include "Components/CompoMe/Component_Core.hpp"
 #include "Components/CompoMe/Component_Core_Component_Control_handle.hpp"
+#include <iostream>
 
 namespace CompoMe {
 
 void Component_Core_Component_Control_handle::step() {
 
   void();
+  std::cout << "ceci est un test" << "\n";
+
 
   return;
 }
