@@ -31,24 +31,6 @@ Component_Control_fake_stream::~Component_Control_fake_stream() noexcept {}
 // INTERFACE Function Component_Control
 // ////////////////////////////////////////////////
 
-void Component_Control_fake_stream::step() {
-  this->get_o().start();
-  this->get_o() << "step("
-                << ")";
-  this->get_o().send();
-
-  this->get_i().pull();
-  if (this->get_i().get_si().peek() == '!') {
-    this->get_i().get_si().get(); // remove !
-    std::shared_ptr<CompoMe::Error> l_e;
-    this->get_i() >> l_e;
-    this->get_i().end();
-    l_e->real();
-  }
-
-  return;
-}
-
 void Component_Control_fake_stream::start() {
   this->get_o().start();
   this->get_o() << "start("

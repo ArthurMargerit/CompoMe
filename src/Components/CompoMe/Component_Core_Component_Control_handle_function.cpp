@@ -4,14 +4,6 @@
 
 namespace CompoMe {
 
-void Component_Core_Component_Control_handle::step() {
-
-  void();
-  std::cout << "ceci est un test" << "\n";
-
-
-  return;
-}
 void Component_Core_Component_Control_handle::start() {
 
   void();

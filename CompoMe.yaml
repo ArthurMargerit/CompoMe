@@ -202,7 +202,6 @@
 - INTERFACE:
     NAME: CompoMe::Component_Control
     FUNCTION:
-      - void step()
       - void start()
       - void stop()
       - void init()
