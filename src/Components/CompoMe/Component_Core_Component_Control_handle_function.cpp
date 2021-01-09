@@ -1,100 +1,72 @@
 #include "Components/CompoMe/Component_Core.hpp"
 #include "Components/CompoMe/Component_Core_Component_Control_handle.hpp"
 
-#include "CompoMe/Log.hpp"
-
 namespace CompoMe {
+
 void Component_Core_Component_Control_handle::step() {
-  auto v_state = this->get_c().get_state();
 
-  if (is(v_state,Component_state::STARTED)) {
-    C_ERROR("Wrong state translation",
-            "to do a step you need to start component first");
-    return;
-  }
+  void();
 
-  // do component step
-  this->get_c().step();
   return;
 }
-
 void Component_Core_Component_Control_handle::start() {
-  auto v_state = this->get_c().get_state();
 
-  if (is(v_state, Component_state::CONFIGURED)) {
-    C_ERROR("Wrong state translation",
-            "to do a start you need to configure component first");
-    return;
-  }
+  void();
 
-  if (is(v_state, Component_state::CONNECTED)) {
-    C_ERROR("Wrong state translation",
-            "to do a start you need to connect component first");
-    return;
-  }
-
-  // do component start
-  this->get_c().start();
   return;
 }
-
 void Component_Core_Component_Control_handle::stop() {
-  auto v_state = this->get_c().get_state();
 
-  if (is(v_state, Component_state::STARTED)) {
-    C_ERROR("Wrong state translation",
-            "to do a stop you need to start component first");
-    return;
-  }
+  void();
 
-  this->get_c().stop();
   return;
 }
-
 void Component_Core_Component_Control_handle::init() {
-  //  this->get_c().init();
+
+  void();
+
   return;
 }
-
 void Component_Core_Component_Control_handle::uninit() {
-  // this->get_c().uninit();
+
+  void();
+
   return;
 }
-
 void Component_Core_Component_Control_handle::connect() {
-  auto v_state = this->get_c().get_state();
-  if (is(v_state, Component_state::INITIALIZED)) {
-    C_ERROR("Wrong state translation",
-            "to do a configured you need to initialized component first");
-    return;
-  }
 
-  this->get_c().connection();
+  void();
+
   return;
 }
-
 void Component_Core_Component_Control_handle::configure() {
-  auto v_state = this->get_c().get_state();
-  if (is(v_state, Component_state::INITIALIZED)) {
-    C_ERROR("Wrong state translation",
-            "to do a configured you need to initialized component first");
-    return;
-  }
 
-  this->get_c().configuration();
+  void();
+
   return;
 }
-
 CompoMe::String Component_Core_Component_Control_handle::name() {
-  return this->get_c().get_name();
-}
 
+  CompoMe::String ret =
+
+      CompoMe::String();
+
+  return ret;
+}
 CompoMe::Component_state Component_Core_Component_Control_handle::state() {
-  return this->get_c().get_state();
-}
 
+  CompoMe::Component_state ret =
+
+      CompoMe::Component_state();
+
+  return ret;
+}
 CompoMe::String Component_Core_Component_Control_handle::status() {
-  CompoMe::String ret = CompoMe::String("Test");
+
+  CompoMe::String ret =
+
+      CompoMe::String();
+
   return ret;
 }
 

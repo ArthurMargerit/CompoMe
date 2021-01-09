@@ -1,6 +1,7 @@
 
 #include "Components/CompoMe/Component_Core.hpp"
 #include "CompoMe/Log.hpp"
+#include <algorithm>
 
 namespace CompoMe {
 
@@ -27,7 +28,6 @@ Component_Core::~Component_Core() noexcept {
 void Component_Core::configuration() {
   Component::configuration();
   C_INFO_TAG("CONF: Component_Core", "Component,Component_Core");
-  this->set_state(this->get_state() | Component_state::CONFIGURED);
 
   // configuration: sub_componentreturn;
 }
@@ -36,7 +36,7 @@ void Component_Core::connection() {
   // connect: parent
   Component::connection();
   C_INFO_TAG("CONNECT: Component_Core", "Component,Component_Core");
-  this->set_state(this->get_state() | Component_state::CONNECTED);
+
   // connect: intern
 
   // connect: sub componentreturn;
@@ -46,8 +46,6 @@ void Component_Core::start() {
   // start: parent
   Component::start();
   C_INFO_TAG("START: Component_Core", "Component,Component_Core");
-
-  this->set_state(this->get_state() | Component_state::STARTED);
 
   // start: sub componentreturn;
 }
@@ -65,12 +63,6 @@ void Component_Core::stop() {
   Component::stop();
   // stop: sub_component
   C_INFO_TAG("STOP: Component_Core", "Component,Component_Core");
-  // if (this->get_state() & Component_state::STARTED) {
-  //   C_WARNING("This component cannot be stop because they are not started");
-  //   return;
-  // }
-
-  //this->set_state(this->get_state() - Component_state::STARTED);
   return;
 }
 
