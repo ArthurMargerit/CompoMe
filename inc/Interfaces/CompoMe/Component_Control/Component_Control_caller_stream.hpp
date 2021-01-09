@@ -24,9 +24,6 @@ protected:
 private:
   bool step(CompoMe::Function_stream_recv &is, CompoMe::Return_stream_send &os);
 
-  bool step3(CompoMe::Function_stream_recv &is,
-             CompoMe::Return_stream_send &os);
-
   bool start(CompoMe::Function_stream_recv &is,
              CompoMe::Return_stream_send &os);
 
