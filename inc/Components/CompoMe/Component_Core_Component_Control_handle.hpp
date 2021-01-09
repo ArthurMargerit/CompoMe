@@ -26,6 +26,7 @@ public:
 
   // Component_Control /////////////////////////////////////////////////////////
   virtual void step() override;
+  virtual void step2() override;
   virtual void start() override;
   virtual void stop() override;
   virtual void init() override;

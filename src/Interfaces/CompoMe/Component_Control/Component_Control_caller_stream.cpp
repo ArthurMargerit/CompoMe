@@ -42,6 +42,10 @@ bool Component_Control_caller_stream::call(std::string &name_function,
     result = this->step(is, os);
     break;
 
+  case str2int("step2"):
+    result = this->step2(is, os);
+    break;
+
   case str2int("start"):
     result = this->start(is, os);
     break;
@@ -93,6 +97,25 @@ bool Component_Control_caller_stream::step(CompoMe::Function_stream_recv &is,
   try {
 
     this->comp.step();
+
+  } catch (const CompoMe::Error &e) {
+    os << "!" << &e;
+  }
+
+  return true;
+}
+
+bool Component_Control_caller_stream::step2(CompoMe::Function_stream_recv &is,
+                                            CompoMe::Return_stream_send &os) {
+
+  char _l = is.get();
+  if (_l != ')') {
+    return false;
+  }
+
+  try {
+
+    this->comp.step2();
 
   } catch (const CompoMe::Error &e) {
     os << "!" << &e;
