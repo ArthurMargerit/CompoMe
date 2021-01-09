@@ -35,8 +35,6 @@ public:
   //                                 FUNCTION                                //
   /////////////////////////////////////////////////////////////////////////////
 
-  virtual void step() override;
-
   virtual void start() override;
 
   virtual void stop() override;
