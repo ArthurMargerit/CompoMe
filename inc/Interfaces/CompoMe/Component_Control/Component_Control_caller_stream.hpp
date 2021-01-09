@@ -22,6 +22,8 @@ protected:
             CompoMe::Return_stream_send &os) override;
 
 private:
+  bool step(CompoMe::Function_stream_recv &is, CompoMe::Return_stream_send &os);
+
   bool start(CompoMe::Function_stream_recv &is,
              CompoMe::Return_stream_send &os);
 

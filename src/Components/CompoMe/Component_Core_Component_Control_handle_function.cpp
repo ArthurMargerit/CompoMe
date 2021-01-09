@@ -3,6 +3,12 @@
 
 namespace CompoMe {
 
+void Component_Core_Component_Control_handle::step() {
+
+  void();
+
+  return;
+}
 void Component_Core_Component_Control_handle::start() {
 
   void();
