@@ -9,12 +9,6 @@ void Component_Core_Component_Control_handle::step() {
 
   return;
 }
-void Component_Core_Component_Control_handle::step3() {
-
-  void();
-
-  return;
-}
 void Component_Core_Component_Control_handle::start() {
 
   void();

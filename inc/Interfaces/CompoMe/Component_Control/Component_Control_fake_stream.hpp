@@ -37,8 +37,6 @@ public:
 
   virtual void step() override;
 
-  virtual void step3() override;
-
   virtual void start() override;
 
   virtual void stop() override;
