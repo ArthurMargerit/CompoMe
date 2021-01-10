@@ -5,21 +5,48 @@
 namespace CompoMe {
 
 void Component_Core_Component_Control_handle::step() {
+  auto v_state = this->get_c().get_state();
 
-  void();
+  if (is(v_state, Component_state::STARTED)) {
+    C_ERROR("Wrong state translation",
+            "to do a step you need to start component first");
+    return;
+  }
 
+  // do component step
+  this->get_c().step();
   return;
 }
 void Component_Core_Component_Control_handle::start() {
 
-  void();
+  auto v_state = this->get_c().get_state();
 
+  if (is(v_state, Component_state::CONFIGURED)) {
+    C_ERROR("Wrong state translation",
+            "to do a start you need to configure component first");
+    return;
+  }
+
+  if (is(v_state, Component_state::CONNECTED)) {
+    C_ERROR("Wrong state translation",
+            "to do a start you need to connect component first");
+    return;
+  }
+
+  // do component start
+  this->get_c().start();
   return;
 }
 void Component_Core_Component_Control_handle::stop() {
+  auto v_state = this->get_c().get_state();
 
-  void();
+  if (is(v_state, Component_state::STARTED)) {
+    C_ERROR("Wrong state translation",
+            "to do a stop you need to start component first");
+    return;
+  }
 
+  this->get_c().stop();
   return;
 }
 void Component_Core_Component_Control_handle::init() {
@@ -35,40 +62,37 @@ void Component_Core_Component_Control_handle::uninit() {
   return;
 }
 void Component_Core_Component_Control_handle::connect() {
+  auto v_state = this->get_c().get_state();
+  if (is(v_state, Component_state::INITIALIZED)) {
+    C_ERROR("Wrong state translation",
+            "to do a configured you need to initialized component first");
+    return;
+  }
 
-  void();
-
+  this->get_c().connection();
   return;
 }
 void Component_Core_Component_Control_handle::configure() {
 
-  void();
+  auto v_state = this->get_c().get_state();
+  if (is(v_state, Component_state::INITIALIZED)) {
+    C_ERROR("Wrong state translation",
+            "to do a configured you need to initialized component first");
+    return;
+  }
 
+  this->get_c().configuration();
   return;
 }
 CompoMe::String Component_Core_Component_Control_handle::name() {
 
-  CompoMe::String ret =
-
-      CompoMe::String();
-
-  return ret;
+  return this->get_c().get_name();
 }
 CompoMe::Component_state Component_Core_Component_Control_handle::state() {
-
-  CompoMe::Component_state ret =
-
-      CompoMe::Component_state();
-
-  return ret;
+  return this->get_c().get_state();
 }
 CompoMe::String Component_Core_Component_Control_handle::status() {
-
-  CompoMe::String ret =
-
-      CompoMe::String();
-
-  return ret;
+  return CompoMe::String("Test");
+  ;
 }
-
 } // namespace CompoMe
