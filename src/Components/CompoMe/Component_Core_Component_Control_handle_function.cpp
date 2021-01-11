@@ -33,8 +33,15 @@ void Component_Core_Component_Control_handle::start() {
     return;
   }
 
+  if (is(v_state, Component_state::STARTED)) {
+    C_ERROR("Wrong state translation",
+            "You cannot call a start on a component already started");
+    return;
+  }
+
   // do component start
   this->get_c().start();
+  this->get_c().set_state(v_state | Component_state::STARTED);
   return;
 }
 void Component_Core_Component_Control_handle::stop() {
@@ -47,41 +54,43 @@ void Component_Core_Component_Control_handle::stop() {
   }
 
   this->get_c().stop();
+  this->get_c().set_state(v_state & ~Component_state::STARTED);
   return;
 }
 void Component_Core_Component_Control_handle::init() {
-
-  void();
-
+  auto v_state = this->get_c().get_state();
+  this->get_c().set_state(v_state | Component_state::INITIALIZED);
   return;
 }
 void Component_Core_Component_Control_handle::uninit() {
-
-  void();
-
+  auto v_state = this->get_c().get_state();
+  this->get_c().set_state(v_state & ~Component_state::INITIALIZED);
   return;
 }
 void Component_Core_Component_Control_handle::connect() {
   auto v_state = this->get_c().get_state();
-  if (is(v_state, Component_state::INITIALIZED)) {
-    C_ERROR("Wrong state translation",
-            "to do a configured you need to initialized component first");
-    return;
-  }
+
+  // if (CompoMe::is(v_state, Component_state::INITIALIZED) == true) {
+  //   C_ERROR("Wrong state translation",
+  //           "to do a configured you need to initialized component first");
+  //   return;
+  // }
 
   this->get_c().connection();
+  this->get_c().set_state(v_state | Component_state::CONNECTED);
   return;
 }
 void Component_Core_Component_Control_handle::configure() {
 
   auto v_state = this->get_c().get_state();
-  if (is(v_state, Component_state::INITIALIZED)) {
-    C_ERROR("Wrong state translation",
-            "to do a configured you need to initialized component first");
-    return;
-  }
+  // if (is(v_state, Component_state::INITIALIZED)) {
+  //   C_ERROR("Wrong state translation",
+  //           "to do a configured you need to initialized component first");
+  //   return;
+  // }
 
   this->get_c().configuration();
+  this->get_c().set_state(v_state | Component_state::CONFIGURED);
   return;
 }
 CompoMe::String Component_Core_Component_Control_handle::name() {

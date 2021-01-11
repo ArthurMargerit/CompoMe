@@ -7,3 +7,4 @@ GEN:.*Set.*
 GEN:.*Pair.*
 GEN:.*Tuple.*
 GEN:.*Map.*
+GEN:COMPONENT.CompoMe::Component_Core.PROVIDE.Component_Control.handle.*
