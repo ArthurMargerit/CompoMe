@@ -40,13 +40,13 @@
 - TYPE:
     NAME: i32
     DEFINITION: std::int32_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "i"
 
 - TYPE:
     NAME: i64
     DEFINITION: std::int64_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "x"
 
 
@@ -54,25 +54,25 @@
 - TYPE:
     NAME: ui8
     DEFINITION: std::uint8_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "y"
 
 - TYPE:
     NAME: ui16
     DEFINITION: std::uint16_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "q"
 
 - TYPE:
     NAME: ui32
     DEFINITION: std::uint32_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "u"
 
 - TYPE:
     NAME: ui64
     DEFINITION: std::uint64_t
-    INCLUDE: "<cstdint>"
+    INCLUDE: '<cstdint>'
     DBUS: "t"
 
 # String
@@ -213,6 +213,12 @@
       - CompoMe::Component_state state()
       - CompoMe::String status()
 
+- ERROR:
+    NAME: CompoMe::Component_Core_ns::Wrong_state_transition
+    DATA:
+      - CompoMe::Component_state from
+      - CompoMe::Component_state to
+      - CompoMe::String msg
 
 - COMPONENT:
     NAME: CompoMe::Component_Core
