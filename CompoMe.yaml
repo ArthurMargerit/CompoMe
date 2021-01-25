@@ -8,21 +8,27 @@
 # boolean
 - TYPE:
     NAME: bool
-    DEFINITION: bool
-    NATIF: True
+    NATIF: false
     DBUS: "b"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_BOOLEAN
 
 # float/double
 - TYPE:
     NAME: float
-    DEFINITION: float
-    NATIF: True
+    NATIF: False
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_DOUBLE
 
 - TYPE:
     NAME: double
-    DEFINITION: double
-    NATIF: True
+    NATIF: False
     DBUS: "d"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_DOUBLE
 
 # int 
 - TYPE:
@@ -30,25 +36,36 @@
     DEFINITION: std::int8_t
     INCLUDE: "<cstdint>"
     DBUS: "y"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_BYTE
 
 - TYPE:
     NAME: i16
     DEFINITION: std::int16_t
     INCLUDE: "<cstdint>"
     DBUS: "n"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_INT16
 
 - TYPE:
     NAME: i32
     DEFINITION: std::int32_t
     INCLUDE: '<cstdint>'
     DBUS: "i"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_INT32
 
 - TYPE:
     NAME: i64
     DEFINITION: std::int64_t
     INCLUDE: '<cstdint>'
     DBUS: "x"
-
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_INT64
 
 # unsigned int
 - TYPE:
@@ -56,24 +73,36 @@
     DEFINITION: std::uint8_t
     INCLUDE: '<cstdint>'
     DBUS: "y"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_BYTE
 
 - TYPE:
     NAME: ui16
     DEFINITION: std::uint16_t
     INCLUDE: '<cstdint>'
     DBUS: "q"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_UINT16
 
 - TYPE:
     NAME: ui32
     DEFINITION: std::uint32_t
     INCLUDE: '<cstdint>'
     DBUS: "u"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_UINT32
 
 - TYPE:
     NAME: ui64
     DEFINITION: std::uint64_t
     INCLUDE: '<cstdint>'
     DBUS: "t"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      DBUS_TYPE: DBUS_TYPE_UINT64
 
 # String
 # We redefine it to override stream operator (<<,>>) 
@@ -82,6 +111,8 @@
     DEFINITION: CompoMe::String_d
     INCLUDE: '"Types/CompoMe/String_d.hpp"'
     DBUS: "s"
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 - TYPE:
     NAME: P
@@ -92,7 +123,6 @@
     ARG:
       - T
 
-
 # std::vector 
 - TYPE:
     NAME: Vec
@@ -102,16 +132,19 @@
     INCLUDE: "<vector>"
     ARG:
       - T
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 - TYPE:
-    NAME: Map
+    NAME: Set
     DYNAMIC: True
     TOSTRING: True
-    DEFINITION: "std::map<K,V>"
-    INCLUDE: "<map>"
+    DEFINITION: "std::set<T>"
+    INCLUDE: "<set>"
     ARG:
-      - K
-      - V
+      - T
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 - TYPE:
     NAME: Array
@@ -122,6 +155,21 @@
     ARG:
       - DATA
       - unsigned long int NB
+    OPTIONS:
+      TO_DBUS_STREAM: true
+
+
+- TYPE:
+    NAME: Map
+    DYNAMIC: True
+    TOSTRING: True
+    DEFINITION: "std::map<K,V>"
+    INCLUDE: "<map>"
+    ARG:
+      - K
+      - V
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 - TYPE:
     NAME: Pair
@@ -132,6 +180,8 @@
     ARG:
       - F
       - S
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 - TYPE:
     NAME: Tuple
@@ -141,15 +191,8 @@
     INCLUDE: "<tuple>"
     ARG:
       - ...Args
-
-- TYPE:
-    NAME: Set
-    DYNAMIC: True
-    TOSTRING: True
-    DEFINITION: "std::set<T>"
-    INCLUDE: "<set>"
-    ARG:
-      - T
+    OPTIONS:
+      TO_DBUS_STREAM: true
 
 # CompoMe Internal Data
 - TYPE:
@@ -229,10 +272,10 @@
       - CompoMe::Component_Control handle
 
 # - COMPONENT:
-#     NAME: CompoMe::Component_Scenario
+#     NAME: CompoMe::Scenario_Player
 #     DATA:
 #       - CompoMe::String file_sce_path
-#       - CompoMe::Map<CompoMe::String,CompoMe::Interface_p> interface
+#       - Map<CompoMe::String,CompoMe::Interface_p> interface
 #     FUNCTION:
-#       - void add_interface(CompoMe::Interface_p> p_i)
-#       - void remove_interface(CompoMe::Interface_p> p_i)
+#       - void add_interface(CompoMe::Interface_p i)
+#       - void remove_interface(CompoMe::Interface_p i)
