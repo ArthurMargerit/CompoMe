@@ -19,3 +19,7 @@ std::ostream &operator<<(std::ostream &os, const CompoMe::String_d &c);
 bool operator<( const CompoMe::String_d &b, const CompoMe::String_d & a);
 std::istream &operator>>(std::istream &is, CompoMe::String_d &c);
 } // namespace CompoMe
+
+class DBusMessageIter;
+DBusMessageIter &operator<<(DBusMessageIter &os, const std::string &pt);
+DBusMessageIter &operator>>(DBusMessageIter &is, std::string &pt);
