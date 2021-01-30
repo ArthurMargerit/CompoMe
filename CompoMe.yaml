@@ -41,6 +41,8 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
+
 
 - TYPE:
     NAME: i16
@@ -51,6 +53,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT16
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
     NAME: i32
@@ -61,6 +64,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT32
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
     NAME: i64
@@ -71,6 +75,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT64
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 # unsigned int
 - TYPE:
@@ -82,6 +87,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
     NAME: ui16
@@ -92,6 +98,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT16
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
     NAME: ui32
@@ -102,6 +109,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT32
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
     NAME: ui64
@@ -112,6 +120,7 @@
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT64
     SWIG: true
+    SWIG_INCLUDE: "stdint.i"
 
 # String
 # We redefine it to override stream operator (<<,>>) 
@@ -122,6 +131,7 @@
     DBUS: "s"
     OPTIONS:
       TO_DBUS_STREAM: true
+    SWIG: true
 
 - TYPE:
     NAME: P
