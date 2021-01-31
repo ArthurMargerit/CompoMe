@@ -8,28 +8,30 @@
 # boolean
 - TYPE:
     NAME: bool
-    NATIF: false
+    NATIF: TRUE
     DBUS: "b"
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BOOLEAN
-#    SWIG: true
+    SWIG: true
 
 # float/double
 - TYPE:
     NAME: float
-    NATIF: False
+    NATIF: TRUE
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_DOUBLE
+    SWIG: true
 
 - TYPE:
     NAME: double
-    NATIF: False
+    NATIF: TRUE
     DBUS: "d"
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_DOUBLE
+    SWIG: true
 
 # int 
 - TYPE:
