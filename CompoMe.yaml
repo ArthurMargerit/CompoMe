@@ -13,7 +13,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BOOLEAN
-    SWIG: true
+      SWIG: true
 
 # float/double
 - TYPE:
@@ -22,7 +22,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_DOUBLE
-    SWIG: true
+      SWIG: true
 
 - TYPE:
     NAME: double
@@ -31,7 +31,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_DOUBLE
-    SWIG: true
+      SWIG: true
 
 # int 
 - TYPE:
@@ -42,7 +42,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 
@@ -54,7 +54,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT16
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
@@ -65,7 +65,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT32
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
@@ -76,7 +76,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT64
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 # unsigned int
@@ -88,7 +88,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
@@ -99,7 +99,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT16
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
@@ -110,7 +110,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT32
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 - TYPE:
@@ -121,7 +121,7 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT64
-    SWIG: true
+      SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
 # String
@@ -133,7 +133,7 @@
     DBUS: "s"
     OPTIONS:
       TO_DBUS_STREAM: true
-    SWIG: true
+      SWIG: true
 
 - TYPE:
     NAME: P
