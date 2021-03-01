@@ -167,6 +167,5 @@ CompoMe::Component_state Component_Core_Component_Control_handle::state() {
 }
 CompoMe::String Component_Core_Component_Control_handle::status() {
   return CompoMe::String("Test");
-  ;
 }
 } // namespace CompoMe
