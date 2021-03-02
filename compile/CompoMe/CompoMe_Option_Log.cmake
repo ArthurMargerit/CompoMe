@@ -1,4 +1,4 @@
-option(COMPOME_LOG_D "ACTIVATE/DESACTIVATE log system" 1)
+option(COMPOME_LOG_D "ACTIVATE/DESACTIVATE log system" 0)
 if(COMPOME_LOG_D)
   add_compile_definitions(COMPOME_LOG=1)
 else(COMPOME_LOG_D)
