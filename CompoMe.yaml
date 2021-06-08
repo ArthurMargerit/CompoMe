@@ -155,6 +155,8 @@
       - T
     OPTIONS:
       TO_DBUS_STREAM: true
+      SWIG: true
+    SWIG_INCLUDE: "std_vector.i"
 
 - TYPE:
     NAME: Set
@@ -166,6 +168,8 @@
       - T
     OPTIONS:
       TO_DBUS_STREAM: true
+      SWIG: true
+    SWIG_INCLUDE: "std_set.i"
 
 - TYPE:
     NAME: Array
@@ -178,7 +182,8 @@
       - unsigned long int NB
     OPTIONS:
       TO_DBUS_STREAM: true
-
+      SWIG: true
+    SWIG_INCLUDE: "std_array.i"
 
 - TYPE:
     NAME: Map
@@ -191,6 +196,8 @@
       - V
     OPTIONS:
       TO_DBUS_STREAM: true
+      SWIG: true
+    SWIG_INCLUDE: "std_map.i"
 
 - TYPE:
     NAME: Pair
@@ -203,6 +210,8 @@
       - S
     OPTIONS:
       TO_DBUS_STREAM: true
+      SWIG: true
+    SWIG_INCLUDE: "std_pair.i"
 
 - TYPE:
     NAME: Tuple
@@ -214,6 +223,7 @@
       - ...Args
     OPTIONS:
       TO_DBUS_STREAM: true
+
 
 # CompoMe Internal Data
 - TYPE:
