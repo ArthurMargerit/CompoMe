@@ -4,7 +4,7 @@
 - TYPE:
     NAME: void
     NATIF: true
-
+    
 # boolean
 - TYPE:
     NAME: bool
@@ -13,6 +13,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BOOLEAN
+      SQL_TYPE: BOOL
+      SQL_OPTION: NOT NULL
       SWIG: true
 
 # float/double
@@ -21,6 +23,8 @@
     NATIF: TRUE
     OPTIONS:
       TO_DBUS_STREAM: true
+      SQL_TYPE: REAL
+      SQL_OPTION: NOT NULL
       DBUS_TYPE: DBUS_TYPE_DOUBLE
       SWIG: true
 
@@ -31,6 +35,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_DOUBLE
+      SQL_TYPE: REAL
+      SQL_OPTION: NOT NULL
       SWIG: true
 
 # int 
@@ -42,6 +48,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
+      SQL_TYPE: SMALLINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -54,6 +62,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT16
+      SQL_TYPE: SMALLINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -64,7 +74,9 @@
     DBUS: "i"
     OPTIONS:
       TO_DBUS_STREAM: true
+      SQL_TYPE: INT
       DBUS_TYPE: DBUS_TYPE_INT32
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -76,6 +88,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_INT64
+      SQL_TYPE: BIGINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -88,6 +102,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_BYTE
+      SQL_TYPE: SMALLINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -99,6 +115,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT16
+      SQL_TYPE: SMALLINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -110,6 +128,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT32
+      SQL_TYPE: INT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -121,6 +141,8 @@
     OPTIONS:
       TO_DBUS_STREAM: true
       DBUS_TYPE: DBUS_TYPE_UINT64
+      SQL_TYPE: BIGINT
+      SQL_OPTION: NOT NULL
       SWIG: true
     SWIG_INCLUDE: "stdint.i"
 
@@ -132,6 +154,8 @@
     INCLUDE: '"Types/CompoMe/String_d.hpp"'
     DBUS: "s"
     OPTIONS:
+      SQL_TYPE: VARCHAR
+      SQL_OPTION: NOT NULL
       TO_DBUS_STREAM: true
       SWIG: true
 
@@ -224,6 +248,13 @@
     OPTIONS:
       TO_DBUS_STREAM: true
 
+- TYPE:
+    NAME: CompoMe::Posix::DateTime
+    DEFINITION: time_t
+    INCLUDE: "<ctime>"
+    OPTIONS:
+      TO_DBUS_STREAM: true
+      SWIG: true
 
 # CompoMe Internal Data
 - TYPE:
