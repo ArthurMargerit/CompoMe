@@ -325,6 +325,11 @@
       - CompoMe::Component_state to
       - CompoMe::String msg
 
+- ERROR:
+    NAME: CompoMe::Internal_Error
+    DATA:
+      - CompoMe::String msg
+
 - COMPONENT:
     NAME: CompoMe::Component_Core
     DATA:
